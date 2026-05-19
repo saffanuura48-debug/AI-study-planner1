@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Admin Settings</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h2>Admin 👑</h2>
+
+<a href="/admin_dashboard">Dashboard</a>
+<a href="/analytics">Analytics</a>
+<a href="/reports">Reports</a>
+<a href="/admin_notifications">Notifications</a>
+<a href="/admin_settings">Settings</a>
+<a href="/logout">Logout</a>
+
+</div>
+
+<div class="main-content">
+
+<div class="topbar">
+
+<h1>Admin Settings ⚙️</h1>
+
+</div>
+
+<div class="card">
+
+<form>
+
+<input
+type="text"
+placeholder="System Name">
+
+<input
+type="email"
+placeholder="Admin Email">
+
+<button>
+
+Save Settings
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</body>
+</html>

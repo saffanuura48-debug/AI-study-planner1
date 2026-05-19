@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Student Dashboard</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>AI Planner 🤖</h2>
+
+    <a href="/dashboard">Dashboard</a>
+
+    <a href="/schedule">AI Schedule</a>
+
+    <a href="/notes">Notes</a>
+
+    <a href="/notifications">Notifications</a>
+
+    <a href="/timer">Study Timer</a>
+
+    <a href="/profile">Profile</a>
+
+    <a href="/settings">Settings</a>
+
+    <a href="/logout">Logout</a>
+
+</div>
+
+<div class="main-content">
+
+    <div class="topbar">
+
+        <h1>Student Dashboard 📚</h1>
+
+        <h3>
+            Welcome Back Student 🔥
+        </h3>
+
+    </div>
+
+    <input
+    type="text"
+    id="searchInput"
+    placeholder="Search subject..."
+    class="search-box">
+
+    <div class="card">
+
+        <h2>Add New Subject</h2>
+
+        <form action="/add_subject" method="POST">
+
+            <input
+            type="text"
+            name="subject"
+            placeholder="Subject Name"
+            required>
+
+            <select name="difficulty">
+
+                <option>Easy</option>
+                <option>Medium</option>
+                <option>Hard</option>
+
+            </select>
+
+            <input
+            type="date"
+            name="exam_date"
+            required>
+
+            <input
+            type="number"
+            name="hours"
+            placeholder="Study Hours"
+            required>
+
+            <input
+            type="text"
+            name="progress"
+            placeholder="Progress"
+            required>
+
+            <input
+            type="text"
+            name="reminder"
+            placeholder="Reminder"
+            required>
+
+            <button type="submit">
+                Add Subject
+            </button>
+
+        </form>
+
+    </div>
+
+    <div class="table-box">
+
+        <table>
+
+            <tr>
+
+                <th>ID</th>
+                <th>Subject</th>
+                <th>Difficulty</th>
+                <th>Exam Date</th>
+                <th>Hours</th>
+                <th>Progress</th>
+                <th>Reminder</th>
+                <th>Action</th>
+
+            </tr>
+
+            {% for subject in subjects %}
+
+            <tr>
+
+                <td>{{ subject[0] }}</td>
+                <td>{{ subject[1] }}</td>
+                <td>{{ subject[2] }}</td>
+                <td>{{ subject[3] }}</td>
+                <td>{{ subject[4] }}</td>
+                <td>{{ subject[5] }}</td>
+                <td>{{ subject[6] }}</td>
+
+                <td>
+
+                    <a href="/edit/{{ subject[0] }}"
+                    class="edit-btn">
+
+                        Edit
+
+                    </a>
+
+                    <a href="/delete/{{ subject[0] }}"
+                    class="delete-btn">
+
+                        Delete
+
+                    </a>
+
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+</div>
+
+<script>
+
+const searchInput =
+document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup", function(){
+
+    let value =
+    this.value.toLowerCase();
+
+    let rows =
+    document.querySelectorAll("table tr");
+
+    rows.forEach((row,index)=>{
+
+        if(index===0) return;
+
+        let text =
+        row.innerText.toLowerCase();
+
+        row.style.display =
+        text.includes(value)
+        ? ""
+        : "none";
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>

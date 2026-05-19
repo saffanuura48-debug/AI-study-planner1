@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Student Login</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body class="burgundy-bg">
+
+<div class="login-container">
+
+    <div class="login-box">
+
+        <h1>Student Login 📚</h1>
+
+        <p class="subtitle">
+            Welcome back to AI Study Planner
+        </p>
+
+        <form method="POST">
+
+            <input
+            type="email"
+            name="email"
+            placeholder="Enter Email"
+            required>
+
+            <input
+            type="password"
+            name="password"
+            placeholder="Enter Password"
+            required>
+
+            <button type="submit">
+
+                Login
+
+            </button>
+
+        </form>
+
+        <p class="bottom-text">
+
+            Don't have account?
+
+            <a href="/register">
+
+                Register
+
+            </a>
+
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+</html>

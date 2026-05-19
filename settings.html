@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Settings</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h2>AI Planner 🤖</h2>
+
+<a href="/dashboard">Dashboard</a>
+<a href="/settings">Settings</a>
+<a href="/logout">Logout</a>
+
+</div>
+
+<div class="main-content">
+
+<div class="topbar">
+
+<h1>Settings ⚙️</h1>
+
+</div>
+
+<div class="card">
+
+{% with messages =
+get_flashed_messages() %}
+
+{% if messages %}
+
+<p style="
+color:green;
+margin-bottom:20px;
+font-weight:bold;
+">
+
+{{ messages[0] }}
+
+</p>
+
+{% endif %}
+
+{% endwith %}
+
+<form method="POST">
+
+<input
+type="password"
+name="new_password"
+placeholder="New Password"
+required>
+
+<input
+type="password"
+name="confirm_password"
+placeholder="Confirm Password"
+required>
+
+<button type="submit">
+
+Save Settings
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</body>
+</html>

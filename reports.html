@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Reports</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+<style>
+
+body{
+background:#f5f5f5;
+font-family:Arial;
+}
+
+.report-box{
+width:90%;
+margin:auto;
+margin-top:40px;
+}
+
+.header{
+background:#800020;
+color:white;
+padding:20px;
+border-radius:12px;
+margin-bottom:30px;
+text-align:center;
+}
+
+.report-card{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+line-height:30px;
+}
+
+.btn{
+display:inline-block;
+margin-top:30px;
+background:#800020;
+color:white;
+padding:12px 25px;
+border-radius:8px;
+text-decoration:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="report-box">
+
+<div class="header">
+
+<h1>System Reports 📑</h1>
+
+<p>
+AI Study Planner Monitoring Reports
+</p>
+
+</div>
+
+<div class="report-card">
+
+<h2>Project Report</h2>
+
+<p>
+This system helps students organize study schedules,
+track subjects, monitor progress and manage reminders.
+</p>
+
+<p>
+Admins can monitor users, manage reports,
+view analytics and control the system securely.
+</p>
+
+<p>
+The AI schedule planner automatically prioritizes
+hard subjects and generates optimized study plans.
+</p>
+
+</div>
+
+<a href="/admin_dashboard" class="btn">
+Back To Dashboard
+</a>
+
+</div>
+
+</body>
+</html>

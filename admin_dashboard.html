@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>Admin Panel 👑</h2>
+
+    <a href="/admin_dashboard">
+        Dashboard
+    </a>
+
+    <a href="/analytics">
+        Analytics
+    </a>
+
+    <a href="/manage_users">
+        Users
+    </a>
+
+    <a href="/reports">
+        Reports
+    </a>
+
+    <a href="/admin_notifications">
+        Notifications
+    </a>
+
+    <a href="/admin_settings">
+        Settings
+    </a>
+
+    <a href="/logout">
+        Logout
+    </a>
+
+</div>
+
+<div class="main-content">
+
+    <div class="topbar">
+
+        <h1>Admin Dashboard 👑</h1>
+
+        <h3>
+            Welcome Admin 🔥
+        </h3>
+
+    </div>
+
+    <div class="dashboard-cards">
+
+        <div class="dash-card">
+
+            <h2>{{ users|length }}</h2>
+
+            <p>Total Users</p>
+
+        </div>
+
+        <div class="dash-card">
+
+            <h2>{{ subjects|length }}</h2>
+
+            <p>Total Subjects</p>
+
+        </div>
+
+    </div>
+
+    <div class="table-box">
+
+        <h2>All Users</h2>
+
+        <table>
+
+            <tr>
+
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+
+            </tr>
+
+            {% for user in users %}
+
+            <tr>
+
+                <td>{{ user[0] }}</td>
+                <td>{{ user[1] }}</td>
+                <td>{{ user[2] }}</td>
+                <td>{{ user[4] }}</td>
+
+            </tr>
+
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+</html>

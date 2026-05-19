@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Study Timer</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+<script>
+
+let time = 1500;
+
+function startTimer(){
+
+setInterval(function(){
+
+let minutes =
+Math.floor(time / 60);
+
+let seconds =
+time % 60;
+
+document.getElementById("timer")
+.innerHTML =
+
+minutes + ":" + seconds;
+
+time--;
+
+},1000);
+
+}
+
+</script>
+
+</head>
+
+<body onload="startTimer()">
+
+<div class="sidebar">
+
+<h2>AI Planner 🤖</h2>
+
+<a href="/dashboard">Dashboard</a>
+<a href="/timer">Study Timer</a>
+<a href="/logout">Logout</a>
+
+</div>
+
+<div class="main-content">
+
+<div class="topbar">
+
+<h1>Study Timer ⏳</h1>
+
+</div>
+
+<div class="card"
+style="text-align:center;">
+
+<h1 id="timer"
+style="
+font-size:70px;
+color:#800020;
+">
+
+25:00
+
+</h1>
+
+<p>
+
+Focus and study consistently 🔥
+
+</p>
+
+</div>
+
+</div>
+
+</body>
+</html>

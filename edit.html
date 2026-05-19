@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Edit Subject</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Edit Subject</h2>
+
+<form method="POST">
+
+<input type="text"
+name="subject"
+value="{{ subject[1] }}"
+required>
+
+<select name="difficulty">
+
+<option>{{ subject[2] }}</option>
+
+<option>Easy</option>
+<option>Medium</option>
+<option>Hard</option>
+
+</select>
+
+<input type="date"
+name="exam_date"
+value="{{ subject[3] }}"
+required>
+
+<input type="number"
+name="hours"
+value="{{ subject[4] }}"
+required>
+
+<select name="progress">
+
+<option>{{ subject[5] }}</option>
+
+<option>Pending</option>
+<option>In Progress</option>
+<option>Completed</option>
+
+</select>
+
+<input type="text"
+name="reminder"
+value="{{ subject[6] }}"
+required>
+
+<button type="submit">
+Update Subject
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</body>
+</html>
